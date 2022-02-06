@@ -1,0 +1,7 @@
+During the same semester that I developed the carpooling application
+I partecipated in the development of two other projects for two different courses.
+In the first one, I collaborated with five other students in the creation of a
+videogame from scratch, including every aspect of it: we produced a trailer, a playable prototype
+and a pitch document as if we were to present it to a publisher to have it funded. We named it
+"Cicles" and each one of us had his specific role in the group: personally I programmed 
+most of the prototype using Unity and I was in charge of managing the sound effects.

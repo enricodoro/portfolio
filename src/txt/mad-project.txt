@@ -1,0 +1,5 @@
+During the master's degree course I partecipated with three other students in the development
+of a carsharing mobile application for Android for the Mobile Application Development course.
+The application was developed from scratch using Kotlin and Android Studio as IDE, following
+the Material Design guidelines. At the end of the project (completed in about 3 months), we
+released a quick presentation video.

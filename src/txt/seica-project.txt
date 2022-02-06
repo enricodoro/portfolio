@@ -1,0 +1,4 @@
+During the three-year degree course in Computer Engineering, I have undertaken a two months internship
+at the Seica S.p.A. company located in Strambino (Italy). Here I developed a software to automate
+and control the testing of electronic boards produced by the company.
+Below you can download the report I wrote about this experience.

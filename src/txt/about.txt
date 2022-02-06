@@ -1,5 +1,0 @@
-My name is Enrico D'Oro, I was born in Ivrea (Italy) in 1996.
-I'm currently enrolled in the Software course of the Polytechnic of Turin
-where I formerly graduated as a Computer Engineer.
-I like developing web and mobile applications, in particular working on interfaces design, 
-in order to produce a useful and easy to use product.

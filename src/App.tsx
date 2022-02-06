@@ -1,9 +1,54 @@
-import { Container } from '@mui/material';
-import { React } from './components/Icons';
+import { ThemeProvider } from '@emotion/react'
+import { Container, Grid } from '@mui/material'
+import { useRef, useState } from 'react'
+import About from './components/About'
+import Footer from './components/Footer'
+import Knowledges from './components/Knowledges'
+import Projects from './components/Projects'
+import TopBar from './components/TopBar'
+import './css/App.css'
+import theme from './ThemeOptions'
 
 function App() {
-  return <Container sx={{margin: '16px'}}>
-  </Container>
+  const aboutRef = useRef(null)
+  const projectsRef = useRef(null)
+  const knowledgesRef = useRef(null)
+  const [exp, setExp] = useState(false)
+
+  const executeScroll = (myRef: any) => {
+    myRef.current.scrollIntoView()
+    setExp(false)
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <TopBar
+        exScroll={executeScroll}
+        aboutRef={aboutRef}
+        projectsRef={projectsRef}
+        knowledgesRef={knowledgesRef}
+      />
+      <Container
+        sx={{
+          width: '100%',
+        }}
+      >
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Grid item>
+            <About aboutRef={aboutRef} />
+            <Projects projectsRef={projectsRef} />
+            <Knowledges knowledgesRef={knowledgesRef} />
+          </Grid>
+        </Grid>
+      </Container>
+      <Footer />
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App

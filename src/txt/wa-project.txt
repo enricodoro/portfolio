@@ -1,5 +1,0 @@
-The other project that I developed was for the Web Application course, and I developed it on
-my own, using React Bootstrap, Javascript, JSX and Node. We had 20 days to develop a survey website,
-with the possibility to login and create your own surveys and let other unregistered users to answer them
-and storing all the answers in a database (using SQlite) so that can be retrieved and viewed by the
-user that created that survey.

@@ -1,10 +1,10 @@
 # Portfolio Web Page
 
-This is the code for developing my own portfolio web page, using [TypeScript](https://www.typescriptlang.org/) and the Reac UI library [Material UI](https://mui.com/).
+This is the code for developing my own portfolio web page, using [TypeScript](https://www.typescriptlang.org/) and the React UI library [Material UI](https://mui.com/).
 
 ## Available Scripts
 
-In the project directory, run this two scripts:
+In the project directory, run these two scripts according to the situation:
 
 ### `npm start`
 

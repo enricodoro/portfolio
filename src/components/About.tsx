@@ -9,11 +9,14 @@ export default function About(props: any) {
   return (
     <Paper
       sx={{
-        backgroundColor: lightBlue[100],
+        backgroundColor: 'rgba(255,255,255,0.7)',
         p: '32px',
         borderRadius: '16px',
         mt: '32px',
+        maxWidth: 'lg',
+        mx: 'auto',
       }}
+      elevation={8}
       ref={props.aboutRef}
     >
       <Stack

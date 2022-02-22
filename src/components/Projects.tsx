@@ -1,7 +1,11 @@
 import DownloadIcon from '@mui/icons-material/Download'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import VisibilityIcon from '@mui/icons-material/Visibility'
 import {
   Box,
   Button,
+  Dialog,
+  DialogContent,
   Grid,
   List,
   ListItem,
@@ -10,9 +14,13 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { lightGreen } from '@mui/material/colors'
+import { lightBlue } from '@mui/material/colors'
 import { useState } from 'react'
+import BasilPreview from '../images/basil_preview.png'
 import Seica from '../images/seica-productronics.png'
+import StopAndGo from '../images/stop_and_go_preview.png'
+import SurfeysPreview from '../images/surfeys_preview.png'
+import WASDPreview from '../images/wasd_preview.png'
 import {
   Android,
   Bootstrap,
@@ -43,17 +51,21 @@ export default function Projects(props: any) {
   return (
     <Paper
       sx={{
-        backgroundColor: lightGreen[100],
+        backgroundColor: 'rgba(255,255,255,0.7)',
         p: '32px',
         borderRadius: '16px',
         marginTop: '32px',
+        maxWidth: 'lg',
+        mx: 'auto',
       }}
+      className="project-paper"
+      elevation={8}
       ref={props.projectsRef}
     >
-      <Typography variant="h2" fontWeight="bold" color={lightGreen[900]}>
+      <Typography variant="h2" fontWeight="bold" color={lightBlue[900]}>
         Projects
       </Typography>
-      <Grid container direction="row" alignItems="center" gap={4}>
+      <Grid container direction="row" alignItems="flex-start" gap={4}>
         <Grid item xs={3}>
           <Box>
             <List>
@@ -171,20 +183,41 @@ function GameDesignProject() {
           group: personally I programmed most of the prototype using Unity and I
           was in charge of managing the sound effects.
         </Typography>
-        <Button
-          href={GameDesignPitch}
-          variant="contained"
-          sx={{ width: 'fit-content' }}
-          startIcon={<DownloadIcon />}
-        >
-          Download pitch
-        </Button>
+        <iframe
+          height="512"
+          src="https://www.youtube.com/embed/xTjQoG0lELg"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          frameBorder={0}
+        />
+        <Stack direction="row" gap={1}>
+          <Button
+            href="https://github.com/enricodoro/game-design-cicles"
+            target="_blank"
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<GitHubIcon />}
+          >
+            View code
+          </Button>
+          <Button
+            href={GameDesignPitch}
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<DownloadIcon />}
+          >
+            Download pitch
+          </Button>
+        </Stack>
       </Stack>
     </Box>
   )
 }
 
 function MobileProject() {
+  const [open, setOpen] = useState(false)
+
   return (
     <Box>
       <Stack alignItems="left" gap={4}>
@@ -201,12 +234,23 @@ function MobileProject() {
           following the Material Design guidelines. At the end of the project
           (completed in about 3 months), we released a quick presentation video.
         </Typography>
+        <Button
+          onClick={() => setOpen(true)}
+          variant="contained"
+          sx={{ width: 'fit-content' }}
+          startIcon={<VisibilityIcon />}
+        >
+          Preview
+        </Button>
       </Stack>
+      <MADPreview open={open} setOpen={setOpen} />
     </Box>
   )
 }
 
 function WebProject() {
+  const [open, setOpen] = useState(false)
+
   return (
     <Box>
       <Stack alignItems="left" gap={4}>
@@ -224,12 +268,23 @@ function WebProject() {
           database (using SQlite) so that can be retrieved and viewed by the
           user that created that survey.
         </Typography>
+        <Button
+          onClick={() => setOpen(true)}
+          variant="contained"
+          sx={{ width: 'fit-content' }}
+          startIcon={<VisibilityIcon />}
+        >
+          Preview
+        </Button>
       </Stack>
+      <WA1Preview open={open} setOpen={setOpen} />
     </Box>
   )
 }
 
 function SoftEngProject() {
+  const [open, setOpen] = useState(false)
+
   return (
     <Box>
       <Stack alignItems="left" gap={4}>
@@ -239,12 +294,23 @@ function SoftEngProject() {
           <Figma />
         </Stack>
         <Typography textAlign="justify">Description...</Typography>
+        <Button
+          onClick={() => setOpen(true)}
+          variant="contained"
+          sx={{ width: 'fit-content' }}
+          startIcon={<VisibilityIcon />}
+        >
+          Preview
+        </Button>
       </Stack>
+      <SE2Preview open={open} setOpen={setOpen} />
     </Box>
   )
 }
 
 function HCIProject() {
+  const [open, setOpen] = useState(false)
+
   return (
     <Box>
       <Stack alignItems="left" gap={4}>
@@ -255,7 +321,84 @@ function HCIProject() {
           <Figma />
         </Stack>
         <Typography textAlign="justify">Description...</Typography>
+        <Button
+          onClick={() => setOpen(true)}
+          variant="contained"
+          sx={{ width: 'fit-content', borderRadius: '32px' }}
+          startIcon={<VisibilityIcon />}
+        >
+          Preview
+        </Button>
       </Stack>
+      <HCIPreview open={open} setOpen={setOpen} />
     </Box>
+  )
+}
+
+function HCIPreview(props: any) {
+  return (
+    <Dialog
+      open={props.open}
+      onClose={() => props.setOpen(false)}
+      maxWidth="lg"
+      fullWidth={true}
+    >
+      <DialogContent>
+        <Stack justifyContent="space-around" alignItems="center">
+          <img alt="preview" src={WASDPreview} width="1024px" />
+        </Stack>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+function SE2Preview(props: any) {
+  return (
+    <Dialog
+      open={props.open}
+      onClose={() => props.setOpen(false)}
+      maxWidth="lg"
+      fullWidth={true}
+    >
+      <DialogContent>
+        <Stack justifyContent="space-around" alignItems="center">
+          <img alt="preview" src={BasilPreview} width="1024px" />
+        </Stack>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+function MADPreview(props: any) {
+  return (
+    <Dialog
+      open={props.open}
+      onClose={() => props.setOpen(false)}
+      maxWidth="lg"
+      fullWidth={true}
+    >
+      <DialogContent>
+        <Stack justifyContent="space-around" alignItems="center">
+          <img alt="preview" src={StopAndGo} width="1024px" />
+        </Stack>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+function WA1Preview(props: any) {
+  return (
+    <Dialog
+      open={props.open}
+      onClose={() => props.setOpen(false)}
+      maxWidth="lg"
+      fullWidth={true}
+    >
+      <DialogContent>
+        <Stack justifyContent="space-around" alignItems="center">
+          <img alt="preview" src={SurfeysPreview} width="1024px" />
+        </Stack>
+      </DialogContent>
+    </Dialog>
   )
 }

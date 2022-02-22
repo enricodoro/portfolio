@@ -12,7 +12,7 @@ const theme = createTheme({
             styleOverrides:{
                 root:{
                     color: 'white',
-                    borderRadius: '16px'
+                    borderRadius: '24px'
                 }
             },
         }

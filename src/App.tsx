@@ -30,7 +30,13 @@ function App() {
       />
       <Container
         sx={{
-          width: '100%',
+          maxWidth: '100% !important',
+          px: '64px !important',
+          mx: '0 !important',
+          backgroundImage: 'url(https://i.imgur.com/Ve40rFI.png)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPositionX: '50%',
+          backgroundSize: 'cover',
         }}
       >
         <Grid

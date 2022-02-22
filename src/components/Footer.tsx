@@ -6,7 +6,6 @@ export default function Footer() {
     <Paper
       sx={{
         backgroundColor: lightBlue[900],
-        mt: '32px',
         height: '128px',
         borderRadius: 0,
       }}
@@ -19,11 +18,15 @@ export default function Footer() {
       >
         <Stack direction="row" gap={2}>
           <i
-            className="devicon-react-original"
+            className="devicon-figma-plain"
             style={{ color: 'white', fontSize: 32 }}
           />
           <i
             className="devicon-materialui-plain"
+            style={{ color: 'white', fontSize: 32 }}
+          />
+          <i
+            className="devicon-react-original"
             style={{ color: 'white', fontSize: 32 }}
           />
           <i

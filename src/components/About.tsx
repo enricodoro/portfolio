@@ -34,7 +34,7 @@ export default function About(props: any) {
         />
         <Stack alignItems="left" justifyContent="space-around">
           <Typography variant="h2" color={lightBlue[900]} fontWeight="bold">
-            About me
+            ABOUT ME
           </Typography>
           <Typography textAlign="justify">{paragraph}</Typography>
         </Stack>

@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@emotion/react'
-import { Container, Grid } from '@mui/material'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import { Container, Fab, Grid, Grow } from '@mui/material'
 import { useRef, useState } from 'react'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -14,10 +15,23 @@ function App() {
   const projectsRef = useRef(null)
   const knowledgesRef = useRef(null)
   const [exp, setExp] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY === 0) {
+      setScrolled(false)
+    } else {
+      setScrolled(true)
+    }
+  })
 
   const executeScroll = (myRef: any) => {
     myRef.current.scrollIntoView()
     setExp(false)
+  }
+
+  const handleScroll = () => {
+    window.scrollTo(0, 0)
   }
 
   return (
@@ -41,9 +55,13 @@ function App() {
       >
         <Grid
           container
+          maxWidth="lg"
+          marginX="auto"
           direction="column"
           alignItems="center"
           justifyContent="center"
+          gap={4}
+          pb="32px"
         >
           <Grid item>
             <About aboutRef={aboutRef} />
@@ -51,6 +69,19 @@ function App() {
             <Knowledges knowledgesRef={knowledgesRef} />
           </Grid>
         </Grid>
+        <Grow in={scrolled} {...(scrolled ? { timeout: 500 } : {})}>
+          <Fab
+            onClick={handleScroll}
+            sx={{
+              zIndex: 10,
+              position: 'fixed',
+              right: '32px',
+              bottom: '32px',
+            }}
+          >
+            <ArrowUpwardIcon />
+          </Fab>
+        </Grow>
       </Container>
       <Footer />
     </ThemeProvider>

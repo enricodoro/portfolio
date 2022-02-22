@@ -63,7 +63,7 @@ export default function Projects(props: any) {
       ref={props.projectsRef}
     >
       <Typography variant="h2" fontWeight="bold" color={lightBlue[900]}>
-        Projects
+        PROJECTS
       </Typography>
       <Grid container direction="row" alignItems="flex-start" gap={4}>
         <Grid item xs={3}>
@@ -114,7 +114,7 @@ export default function Projects(props: any) {
             </List>
           </Box>
         </Grid>
-        <Grid item xs>
+        <Grid item xs mt="24px">
           {selectedItem === 0 ? (
             <SeicaProject />
           ) : selectedItem === 1 ? (

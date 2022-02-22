@@ -7,6 +7,9 @@ const theme = createTheme({
             main: lightBlue[900],
         },
     },
+    typography: {
+        fontFamily: ['Titillium Web', 'sans-serif'].join(',')
+    },
     components:{
         MuiButton:{
             styleOverrides:{

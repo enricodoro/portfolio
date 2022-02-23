@@ -54,7 +54,6 @@ export default function Projects(props: any) {
         backgroundColor: 'rgba(255,255,255,0.7)',
         p: '32px',
         borderRadius: '16px',
-        marginTop: '32px',
         maxWidth: 'lg',
         mx: 'auto',
       }}
@@ -63,7 +62,7 @@ export default function Projects(props: any) {
       ref={props.projectsRef}
     >
       <Typography variant="h2" fontWeight="bold" color={lightBlue[900]}>
-        PROJECTS
+        Projects
       </Typography>
       <Grid container direction="row" alignItems="flex-start" gap={4}>
         <Grid item xs={3}>
@@ -84,7 +83,7 @@ export default function Projects(props: any) {
                   onClick={() => setSelectedItem(0)}
                   selected={selectedItem === 0}
                 >
-                  Seica internship
+                  Seica Internship
                 </ListItemButton>
               </ListItem>
             </List>
@@ -95,7 +94,7 @@ export default function Projects(props: any) {
                   fontWeight="bold"
                   sx={{ opacity: 0.7 }}
                 >
-                  Univeristy projects
+                  University projects
                 </Typography>
               </ListItem>
               {projects.map((p, i) => (
@@ -139,13 +138,13 @@ export default function Projects(props: any) {
 function SeicaProject() {
   return (
     <Box>
-      <Stack alignItems="left" gap={4}>
+      <Stack alignItems="center" gap={4}>
         <Stack direction="row" gap={2} alignItems="center">
           <img alt="seica-logo" width="256px" src={Seica} />
           <CSharp />
         </Stack>
         <Typography textAlign="justify">
-          During the three-year degree course in Computer Engineering, I have
+          During the bachelor degree course in Computer Engineering, I have
           undertaken a two months internship at the Seica S.p.A. company located
           in Strambino (Italy). Here I developed a software to automate and
           control the testing of electronic boards produced by the company.
@@ -167,24 +166,27 @@ function SeicaProject() {
 function GameDesignProject() {
   return (
     <Box>
-      <Stack alignItems="left" gap={4}>
+      <Stack alignItems="center" gap={4}>
         <Stack direction="row" gap={2} alignItems="center">
           <Unity />
           <CSharp />
         </Stack>
+
         <Typography textAlign="justify">
-          During the same semester that I developed the carpooling application I
-          partecipated in the development of two other projects for two
-          different courses. In the first one, I collaborated with five other
-          students in the creation of a videogame from scratch, including every
-          aspect of it: we produced a trailer, a playable prototype and a pitch
-          document as if we were to present it to a publisher to have it funded.
-          We named it "Cicles" and each one of us had his specific role in the
-          group: personally I programmed most of the prototype using Unity and I
-          was in charge of managing the sound effects.
+          During the master degree course I partecipated in the development of a
+          project for the Game Design course. For about three months, I
+          collaborated with five other students in the{' '}
+          <b className="bold-text">creation of a videogame from scratch</b>,
+          including every aspect of it: we produced a trailer, a playable
+          prototype and a pitch document as if we were to present it to a
+          publisher to have it funded. We named it "Cicles" and each one of us
+          had his specific role in the group: personally I programmed most of
+          the prototype using <b className="bold-text">Unity</b> and I was also
+          in charge of managing the sound effects.
         </Typography>
         <iframe
-          height="512"
+          height="270"
+          width="480"
           src="https://www.youtube.com/embed/xTjQoG0lELg"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -220,28 +222,49 @@ function MobileProject() {
 
   return (
     <Box>
-      <Stack alignItems="left" gap={4}>
+      <Stack alignItems="center" gap={4}>
         <Stack direction="row" gap={2} alignItems="center">
           <Android />
           <Kotlin />
           <Firebase />
         </Stack>
         <Typography textAlign="justify">
-          During the master's degree course I partecipated with three other
-          students in the development of a carsharing mobile application for
-          Android for the Mobile Application Development course. The application
-          was developed from scratch using Kotlin and Android Studio as IDE,
-          following the Material Design guidelines. At the end of the project
-          (completed in about 3 months), we released a quick presentation video.
+          I worked with three other students in the development of a{' '}
+          <b className="bold-text">carsharing mobile application for Android</b>{' '}
+          for the Mobile Application Development course. The application was
+          developed from scratch using <b className="bold-text">Kotlin</b> and
+          Android Studio as IDE, following the Material Design guidelines. At
+          the end of the project (completed in about 3 months), we released a
+          quick presentation video.
         </Typography>
-        <Button
-          onClick={() => setOpen(true)}
-          variant="contained"
-          sx={{ width: 'fit-content' }}
-          startIcon={<VisibilityIcon />}
-        >
-          Preview
-        </Button>
+        <iframe
+          width="480"
+          height="270"
+          src="https://www.youtube.com/embed/qFpMaf8a6X8"
+          title="YouTube video player"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+        <Stack direction="row" gap={1}>
+          <Button
+            href="https://github.com/enricodoro/mobile-app-carpooling"
+            target="_blank"
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<GitHubIcon />}
+          >
+            View code
+          </Button>
+          <Button
+            onClick={() => setOpen(true)}
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<VisibilityIcon />}
+          >
+            Preview
+          </Button>
+        </Stack>
       </Stack>
       <MADPreview open={open} setOpen={setOpen} />
     </Box>
@@ -253,29 +276,42 @@ function WebProject() {
 
   return (
     <Box>
-      <Stack alignItems="left" gap={4}>
+      <Stack alignItems="center" gap={4}>
         <Stack direction="row" gap={2} alignItems="center">
           <JavaScript />
           <React />
           <Bootstrap />
         </Stack>
         <Typography textAlign="justify">
-          The other project that I developed was for the Web Application course,
-          and I developed it on my own, using React Bootstrap, Javascript, JSX
-          and Node. We had 20 days to develop a survey website, with the
-          possibility to login and create your own surveys and let other
-          unregistered users to answer them and storing all the answers in a
-          database (using SQlite) so that can be retrieved and viewed by the
-          user that created that survey.
+          Another project that I developed was for the Web Application course,
+          and I developed it on my own, using{' '}
+          <b className="bold-text">React Bootstrap, Javascript, JSX and Node</b>
+          . We had 20 days to develop a{' '}
+          <b className="bold-text">survey website</b>, with the possibility to
+          login and create your own surveys and let other unregistered users to
+          answer them and storing all the answers in a database (using SQlite)
+          so that can be retrieved and viewed by the user that created that
+          survey.
         </Typography>
-        <Button
-          onClick={() => setOpen(true)}
-          variant="contained"
-          sx={{ width: 'fit-content' }}
-          startIcon={<VisibilityIcon />}
-        >
-          Preview
-        </Button>
+        <Stack direction="row" gap={1}>
+          <Button
+            href="https://github.com/enricodoro/webapp-survey"
+            target="_blank"
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<GitHubIcon />}
+          >
+            View code
+          </Button>
+          <Button
+            onClick={() => setOpen(true)}
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<VisibilityIcon />}
+          >
+            Preview
+          </Button>
+        </Stack>
       </Stack>
       <WA1Preview open={open} setOpen={setOpen} />
     </Box>
@@ -287,21 +323,57 @@ function SoftEngProject() {
 
   return (
     <Box>
-      <Stack alignItems="left" gap={4}>
+      <Stack alignItems="center" gap={4}>
         <Stack direction="row" gap={2} alignItems="center">
           <TypeScript />
           <MaterialUI />
           <Figma />
         </Stack>
-        <Typography textAlign="justify">Description...</Typography>
-        <Button
-          onClick={() => setOpen(true)}
-          variant="contained"
-          sx={{ width: 'fit-content' }}
-          startIcon={<VisibilityIcon />}
-        >
-          Preview
-        </Button>
+        <Typography textAlign="justify">
+          One of the last project I did, was for the Software Engineering II
+          course. It consisted in developing a{' '}
+          <b className="bold-text">
+            Solidarity Purchasing Group application, following the agile
+            methodology
+          </b>
+          : every two weeks we had to present the stories and features
+          implemented by us and plan the ones to implement in the upcoming two
+          weeks, for a total of four presentations (so roughly two months). I
+          did this project with six other students, using{' '}
+          <b className="bold-text">
+            React and TypeScript and by following the Material UI guidelines
+          </b>
+          . At the end of the project we had to prepare a quick demonstration
+          video, available here.
+        </Typography>
+        <iframe
+          width="480"
+          height="270"
+          src="https://www.youtube.com/embed/5BFYhX3r99Q"
+          title="YouTube video player"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <Stack direction="row" gap={1}>
+          <Button
+            href="https://github.com/enricodoro/basil"
+            target="_blank"
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<GitHubIcon />}
+          >
+            View code
+          </Button>
+          <Button
+            onClick={() => setOpen(true)}
+            variant="contained"
+            sx={{ width: 'fit-content' }}
+            startIcon={<VisibilityIcon />}
+          >
+            Preview
+          </Button>
+        </Stack>
       </Stack>
       <SE2Preview open={open} setOpen={setOpen} />
     </Box>
@@ -313,14 +385,26 @@ function HCIProject() {
 
   return (
     <Box>
-      <Stack alignItems="left" gap={4}>
+      <Stack alignItems="center" gap={4}>
         <Stack direction="row" gap={2} alignItems="center">
           <TypeScript />
           <MaterialUI />
           <Firebase />
           <Figma />
         </Stack>
-        <Typography textAlign="justify">Description...</Typography>
+        <Typography textAlign="justify">
+          One of the last project I did was for the Human Computer Interaction
+          course. I did it with three other students in about three months, and
+          it consisted in the development of an application prototype, starting
+          from a research of the needs of a specific group of users. In
+          particular,{' '}
+          <b className="bold-text">
+            we decided to develop an app that would have helped multiplayer
+            online PC videogamers in finding other people to play with
+          </b>{' '}
+          and keep their contacts to better and faster organize future matches.
+        </Typography>
+
         <Button
           onClick={() => setOpen(true)}
           variant="contained"

@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@emotion/react'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
-import { Container, Fab, Grid, Grow } from '@mui/material'
+import { Container, Fab, Grow, Stack } from '@mui/material'
 import { useRef, useState } from 'react'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -53,22 +53,19 @@ function App() {
           backgroundSize: 'cover',
         }}
       >
-        <Grid
-          container
-          maxWidth="lg"
-          marginX="auto"
+        <Stack
           direction="column"
+          maxWidth="lg"
+          gap={4}
+          py="32px"
           alignItems="center"
           justifyContent="center"
-          gap={4}
-          pb="32px"
+          marginX="auto"
         >
-          <Grid item>
-            <About aboutRef={aboutRef} />
-            <Projects projectsRef={projectsRef} />
-            <Knowledges knowledgesRef={knowledgesRef} />
-          </Grid>
-        </Grid>
+          <About aboutRef={aboutRef} />
+          <Projects projectsRef={projectsRef} />
+          <Knowledges knowledgesRef={knowledgesRef} />
+        </Stack>
         <Grow in={scrolled} {...(scrolled ? { timeout: 500 } : {})}>
           <Fab
             onClick={handleScroll}

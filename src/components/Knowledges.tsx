@@ -10,7 +10,6 @@ export default function Knowledges(props: any) {
         filter: 'blur',
         p: '32px',
         borderRadius: '16px',
-        marginTop: '32px',
         maxWidth: 'lg',
         mx: 'auto',
       }}
@@ -18,7 +17,7 @@ export default function Knowledges(props: any) {
       ref={props.knowledgesRef}
     >
       <Typography variant="h2" fontWeight="bold" color={lightBlue[900]}>
-        KNOWLEDGES
+        Knowledges
       </Typography>
     </Paper>
   )

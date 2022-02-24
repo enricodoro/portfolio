@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d628e279.css",
-    "main.js": "/portfolio/static/js/main.69198213.js",
+    "main.css": "/portfolio/static/css/main.e20f0d42.css",
+    "main.js": "/portfolio/static/js/main.80ea50da.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/cicles_pitch.pdf": "/portfolio/static/media/cicles_pitch.3dc9de5a93d4c4484822.pdf",
     "static/media/report.pdf": "/portfolio/static/media/report.bbc240b4bfa1ac44ea3e.pdf",
@@ -13,12 +13,12 @@
     "static/media/seica-productronics.png": "/portfolio/static/media/seica-productronics.1364095a28ecc5107cf2.png",
     "static/media/logo.png": "/portfolio/static/media/logo.4bdbb45d76c89fdb13ec.png",
     "index.html": "/portfolio/index.html",
-    "main.d628e279.css.map": "/portfolio/static/css/main.d628e279.css.map",
-    "main.69198213.js.map": "/portfolio/static/js/main.69198213.js.map",
+    "main.e20f0d42.css.map": "/portfolio/static/css/main.e20f0d42.css.map",
+    "main.80ea50da.js.map": "/portfolio/static/js/main.80ea50da.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d628e279.css",
-    "static/js/main.69198213.js"
+    "static/css/main.e20f0d42.css",
+    "static/js/main.80ea50da.js"
   ]
 }

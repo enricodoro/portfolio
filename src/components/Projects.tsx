@@ -1,3 +1,4 @@
+import { OptionGroupUnstyled, OptionGroupUnstyledProps } from '@mui/base'
 import DownloadIcon from '@mui/icons-material/Download'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import VisibilityIcon from '@mui/icons-material/Visibility'
@@ -6,15 +7,21 @@ import {
   Button,
   Dialog,
   DialogContent,
+  FormControl,
   Grid,
+  InputLabel,
   List,
   ListItem,
   ListItemButton,
+  MenuItem,
   Paper,
+  Select,
   Stack,
+  styled,
   Typography,
 } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
+import * as React from 'react'
 import { useState } from 'react'
 import BasilPreview from '../images/basil_preview.png'
 import Seica from '../images/seica-productronics.png'
@@ -30,15 +37,27 @@ import {
   JavaScript,
   Kotlin,
   MaterialUI,
-  React,
+  ReactIcon,
   TypeScript,
   Unity,
 } from './Icons'
 let SeicaReport = require('../downloads/report.pdf')
 let GameDesignPitch = require('../downloads/cicles_pitch.pdf')
 
+const mql = window.matchMedia('(max-width: 600px)')
+
 export default function Projects(props: any) {
-  const [selectedItem, setSelectedItem] = useState(0)
+  const [selectedItem, setSelectedItem] = useState<number | null>(0)
+  const [mobile, setMobile] = useState(false)
+
+  mql.addEventListener('change', (e) => {
+    const mobileView = e.matches
+    if (mobileView) {
+      setMobile(true)
+    } else {
+      setMobile(false)
+    }
+  })
 
   let projects = [
     'Game Design',
@@ -47,6 +66,36 @@ export default function Projects(props: any) {
     'Software Engineering',
     'Human Computer Interaction',
   ]
+
+  const StyledGroupRoot = styled('li')`
+    list-style: none;
+  `
+
+  const StyledGroupHeader = styled('span')``
+
+  const StyledGroupOptions = styled('ul')`
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+
+    > li {
+      padding-left: 20px;
+    }
+  `
+
+  const CustomOptionGroup = React.forwardRef(function CustomOptionGroup(
+    props: OptionGroupUnstyledProps,
+    ref: React.ForwardedRef<any>,
+  ) {
+    const components: OptionGroupUnstyledProps['components'] = {
+      Root: StyledGroupRoot,
+      Label: StyledGroupHeader,
+      List: StyledGroupOptions,
+      ...props.components,
+    }
+
+    return <OptionGroupUnstyled {...props} ref={ref} components={components} />
+  })
 
   return (
     <Paper
@@ -61,11 +110,35 @@ export default function Projects(props: any) {
       elevation={8}
       ref={props.projectsRef}
     >
-      <Typography variant="h2" fontWeight="bold" color={lightBlue[900]}>
+      <Typography
+        variant="h3"
+        fontWeight="bold"
+        color={lightBlue[900]}
+        gutterBottom
+      >
         Projects
       </Typography>
+      <FormControl fullWidth sx={{ display: { xs: 'flex', md: 'none' } }}>
+        <InputLabel id="select-project-label">Projects</InputLabel>
+        <Select
+          labelId="select-project-label"
+          id="select-project"
+          value={selectedItem}
+          label="Projects"
+          onChange={(e) => setSelectedItem(e.target.value as number)}
+        >
+          <Typography className="group-header">Internships</Typography>
+          <MenuItem value={0}>Seica Internship</MenuItem>
+          <Typography className="group-header">University Projects</Typography>
+          <MenuItem value={1}>Game Design</MenuItem>
+          <MenuItem value={2}>Mobile Application</MenuItem>
+          <MenuItem value={3}>Web Application</MenuItem>
+          <MenuItem value={4}>Software Engineering</MenuItem>
+          <MenuItem value={5}>Human Computer Interaction</MenuItem>
+        </Select>
+      </FormControl>
       <Grid container direction="row" alignItems="flex-start" gap={4}>
-        <Grid item xs={3}>
+        <Grid item xs={3} sx={{ display: { xs: 'none', md: 'flex' } }}>
           <Box>
             <List>
               <ListItem sx={{ backgroundColor: 'transparent' }} component="div">
@@ -79,7 +152,6 @@ export default function Projects(props: any) {
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton
-                  sx={{ borderRadius: '16px' }}
                   onClick={() => setSelectedItem(0)}
                   selected={selectedItem === 0}
                 >
@@ -101,7 +173,6 @@ export default function Projects(props: any) {
                 <>
                   <ListItem disablePadding>
                     <ListItemButton
-                      sx={{ borderRadius: '16px' }}
                       onClick={() => setSelectedItem(i + 1)}
                       selected={selectedItem === i + 1}
                     >
@@ -115,17 +186,17 @@ export default function Projects(props: any) {
         </Grid>
         <Grid item xs mt="24px">
           {selectedItem === 0 ? (
-            <SeicaProject />
+            <SeicaProject mobile={mobile} />
           ) : selectedItem === 1 ? (
-            <GameDesignProject />
+            <GameDesignProject mobile={mobile} />
           ) : selectedItem === 2 ? (
-            <MobileProject />
+            <MobileProject mobile={mobile} />
           ) : selectedItem === 3 ? (
-            <WebProject />
+            <WebProject mobile={mobile} />
           ) : selectedItem === 4 ? (
-            <SoftEngProject />
+            <SoftEngProject mobile={mobile} />
           ) : selectedItem === 5 ? (
-            <HCIProject />
+            <HCIProject mobile={mobile} />
           ) : (
             <></>
           )}
@@ -135,12 +206,18 @@ export default function Projects(props: any) {
   )
 }
 
-function SeicaProject() {
+// PROJECTS INFO
+
+function SeicaProject(props: any) {
   return (
     <Box>
       <Stack alignItems="center" gap={4}>
-        <Stack direction="row" gap={2} alignItems="center">
-          <img alt="seica-logo" width="256px" src={Seica} />
+        <Stack
+          direction={props.mobile ? 'column' : 'row'}
+          gap={4}
+          alignItems="center"
+        >
+          {!props.mobile && <img alt="seica-logo" width="256px" src={Seica} />}
           <CSharp />
         </Stack>
         <Typography textAlign="justify">
@@ -150,6 +227,7 @@ function SeicaProject() {
           control the testing of electronic boards produced by the company.
           Below you can download the report I wrote about this experience.
         </Typography>
+        {props.mobile && <img alt="seica-logo" width="256px" src={Seica} />}
         <Button
           href={SeicaReport}
           variant="contained"
@@ -163,11 +241,11 @@ function SeicaProject() {
   )
 }
 
-function GameDesignProject() {
+function GameDesignProject(props: any) {
   return (
     <Box>
       <Stack alignItems="center" gap={4}>
-        <Stack direction="row" gap={2} alignItems="center">
+        <Stack direction="row" gap={4} alignItems="center">
           <Unity />
           <CSharp />
         </Stack>
@@ -185,15 +263,19 @@ function GameDesignProject() {
           in charge of managing the sound effects.
         </Typography>
         <iframe
-          height="270"
-          width="480"
+          height={props.mobile ? '135' : '270'}
+          width={props.mobile ? '240' : '480'}
           src="https://www.youtube.com/embed/xTjQoG0lELg"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           frameBorder={0}
         />
-        <Stack direction="row" gap={1}>
+        <Stack
+          direction={props.mobile ? 'column' : 'row'}
+          gap={1}
+          alignItems="center"
+        >
           <Button
             href="https://github.com/enricodoro/game-design-cicles"
             target="_blank"
@@ -217,13 +299,13 @@ function GameDesignProject() {
   )
 }
 
-function MobileProject() {
+function MobileProject(props: any) {
   const [open, setOpen] = useState(false)
 
   return (
     <Box>
       <Stack alignItems="center" gap={4}>
-        <Stack direction="row" gap={2} alignItems="center">
+        <Stack direction="row" gap={4} alignItems="center">
           <Android />
           <Kotlin />
           <Firebase />
@@ -238,15 +320,20 @@ function MobileProject() {
           quick presentation video.
         </Typography>
         <iframe
-          width="480"
-          height="270"
+          height={props.mobile ? '135' : '270'}
+          width={props.mobile ? '240' : '480'}
           src="https://www.youtube.com/embed/qFpMaf8a6X8"
           title="YouTube video player"
           frameBorder={0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-        <Stack direction="row" gap={1}>
+
+        <Stack
+          direction={props.mobile ? 'column' : 'row'}
+          gap={1}
+          alignItems="center"
+        >
           <Button
             href="https://github.com/enricodoro/mobile-app-carpooling"
             target="_blank"
@@ -266,20 +353,20 @@ function MobileProject() {
           </Button>
         </Stack>
       </Stack>
-      <MADPreview open={open} setOpen={setOpen} />
+      <MADPreview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
   )
 }
 
-function WebProject() {
+function WebProject(props: any) {
   const [open, setOpen] = useState(false)
 
   return (
     <Box>
       <Stack alignItems="center" gap={4}>
-        <Stack direction="row" gap={2} alignItems="center">
+        <Stack direction="row" gap={4} alignItems="center">
           <JavaScript />
-          <React />
+          <ReactIcon />
           <Bootstrap />
         </Stack>
         <Typography textAlign="justify">
@@ -293,7 +380,11 @@ function WebProject() {
           so that can be retrieved and viewed by the user that created that
           survey.
         </Typography>
-        <Stack direction="row" gap={1}>
+        <Stack
+          direction={props.mobile ? 'column' : 'row'}
+          gap={1}
+          alignItems="center"
+        >
           <Button
             href="https://github.com/enricodoro/webapp-survey"
             target="_blank"
@@ -313,18 +404,18 @@ function WebProject() {
           </Button>
         </Stack>
       </Stack>
-      <WA1Preview open={open} setOpen={setOpen} />
+      <WA1Preview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
   )
 }
 
-function SoftEngProject() {
+function SoftEngProject(props: any) {
   const [open, setOpen] = useState(false)
 
   return (
     <Box>
       <Stack alignItems="center" gap={4}>
-        <Stack direction="row" gap={2} alignItems="center">
+        <Stack direction="row" gap={4} alignItems="center">
           <TypeScript />
           <MaterialUI />
           <Figma />
@@ -347,15 +438,19 @@ function SoftEngProject() {
           video, available here.
         </Typography>
         <iframe
-          width="480"
-          height="270"
+          height={props.mobile ? '135' : '270'}
+          width={props.mobile ? '240' : '480'}
           src="https://www.youtube.com/embed/5BFYhX3r99Q"
           title="YouTube video player"
           frameBorder={0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-        <Stack direction="row" gap={1}>
+        <Stack
+          direction={props.mobile ? 'column' : 'row'}
+          gap={1}
+          alignItems="center"
+        >
           <Button
             href="https://github.com/enricodoro/basil"
             target="_blank"
@@ -375,18 +470,18 @@ function SoftEngProject() {
           </Button>
         </Stack>
       </Stack>
-      <SE2Preview open={open} setOpen={setOpen} />
+      <SE2Preview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
   )
 }
 
-function HCIProject() {
+function HCIProject(props: any) {
   const [open, setOpen] = useState(false)
 
   return (
     <Box>
       <Stack alignItems="center" gap={4}>
-        <Stack direction="row" gap={2} alignItems="center">
+        <Stack direction="row" gap={4} alignItems="center">
           <TypeScript />
           <MaterialUI />
           <Firebase />
@@ -414,10 +509,12 @@ function HCIProject() {
           Preview
         </Button>
       </Stack>
-      <HCIPreview open={open} setOpen={setOpen} />
+      <HCIPreview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
   )
 }
+
+// PREVIEWS
 
 function HCIPreview(props: any) {
   return (
@@ -429,7 +526,11 @@ function HCIPreview(props: any) {
     >
       <DialogContent>
         <Stack justifyContent="space-around" alignItems="center">
-          <img alt="preview" src={WASDPreview} width="1024px" />
+          <img
+            alt="preview"
+            src={WASDPreview}
+            width={props.mobile ? '340px' : '1024px'}
+          />
         </Stack>
       </DialogContent>
     </Dialog>
@@ -446,7 +547,11 @@ function SE2Preview(props: any) {
     >
       <DialogContent>
         <Stack justifyContent="space-around" alignItems="center">
-          <img alt="preview" src={BasilPreview} width="1024px" />
+          <img
+            alt="preview"
+            src={BasilPreview}
+            width={props.mobile ? '340px' : '1024px'}
+          />
         </Stack>
       </DialogContent>
     </Dialog>
@@ -463,7 +568,11 @@ function MADPreview(props: any) {
     >
       <DialogContent>
         <Stack justifyContent="space-around" alignItems="center">
-          <img alt="preview" src={StopAndGo} width="1024px" />
+          <img
+            alt="preview"
+            src={StopAndGo}
+            width={props.mobile ? '340px' : '1024px'}
+          />
         </Stack>
       </DialogContent>
     </Dialog>
@@ -480,7 +589,11 @@ function WA1Preview(props: any) {
     >
       <DialogContent>
         <Stack justifyContent="space-around" alignItems="center">
-          <img alt="preview" src={SurfeysPreview} width="1024px" />
+          <img
+            alt="preview"
+            src={SurfeysPreview}
+            width={props.mobile ? '340px' : '1024px'}
+          />
         </Stack>
       </DialogContent>
     </Dialog>

@@ -1,6 +1,30 @@
-import { Paper, Typography } from '@mui/material'
+import { Grid, Paper, Typography } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
-import { React } from './Icons'
+import {
+  Android,
+  Apple,
+  Arduino,
+  Bootstrap,
+  C,
+  CSharp,
+  CSS,
+  Docker,
+  Figma,
+  Firebase,
+  Git,
+  HTML,
+  Java,
+  JavaScript,
+  Kotlin,
+  Linux,
+  MaterialUI,
+  Raspberry,
+  ReactIcon,
+  TypeScript,
+  Ubuntu,
+  Unity,
+  Windows,
+} from './Icons'
 
 export default function Knowledges(props: any) {
   return (
@@ -16,9 +40,45 @@ export default function Knowledges(props: any) {
       elevation={8}
       ref={props.knowledgesRef}
     >
-      <Typography variant="h2" fontWeight="bold" color={lightBlue[900]}>
+      <Typography
+        variant="h3"
+        fontWeight="bold"
+        color={lightBlue[900]}
+        gutterBottom
+      >
         Knowledges
       </Typography>
+      <Grid
+        container
+        direction="row"
+        gap={4}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Android />
+        <Apple />
+        <Linux />
+        <Ubuntu />
+        <Windows />
+        <Arduino />
+        <Raspberry />
+        <CSS />
+        <HTML />
+        <Bootstrap />
+        <MaterialUI />
+        <ReactIcon />
+        <JavaScript />
+        <TypeScript />
+        <Java />
+        <Kotlin />
+        <C />
+        <CSharp />
+        <Unity />
+        <Docker />
+        <Figma />
+        <Firebase />
+        <Git />
+      </Grid>
     </Paper>
   )
 }

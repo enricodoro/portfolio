@@ -3,16 +3,33 @@ html {
 }
 
 .bubble {
-    border-radius: 50%;
     transition: transform .2s;
 }
 
 .bubble:hover {
-    opacity: 0.7;
+    opacity: 0.9;
     transform: scale(1.5);
-    cursor: pointer;
 }
 
 .bold-text {
     color: #01579b;
+}
+
+.custom-fab {
+    background-color: #fafafa !important;
+    color: #01579b !important;
+}
+
+.custom-fab:hover {
+    opacity: 0.9 !important;
+}
+
+.group-header {
+    display: block;
+    padding: 15px 0 5px 10px;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: #6F7E8C;
 }

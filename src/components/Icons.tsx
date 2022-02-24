@@ -1,6 +1,7 @@
 function Android() {
   return (
     <img
+      className="bubble"
       alt="android"
       height={64}
       width={64}
@@ -12,6 +13,7 @@ function Android() {
 function Apple() {
   return (
     <img
+      className="bubble"
       alt="apple"
       height={64}
       width={64}
@@ -23,6 +25,7 @@ function Apple() {
 function Arduino() {
   return (
     <img
+      className="bubble"
       alt="arduino"
       height={64}
       width={64}
@@ -34,6 +37,7 @@ function Arduino() {
 function Bootstrap() {
   return (
     <img
+      className="bubble"
       alt="bootstrap"
       height={64}
       width={64}
@@ -45,6 +49,7 @@ function Bootstrap() {
 function C() {
   return (
     <img
+      className="bubble"
       alt="c"
       height={64}
       width={64}
@@ -56,6 +61,7 @@ function C() {
 function CSharp() {
   return (
     <img
+      className="bubble"
       alt="csharp"
       height={64}
       width={64}
@@ -67,6 +73,7 @@ function CSharp() {
 function CSS() {
   return (
     <img
+      className="bubble"
       alt="css"
       height={64}
       width={64}
@@ -78,6 +85,7 @@ function CSS() {
 function Docker() {
   return (
     <img
+      className="bubble"
       alt="docker"
       height={64}
       width={64}
@@ -89,6 +97,7 @@ function Docker() {
 function Figma() {
   return (
     <img
+      className="bubble"
       alt="figma"
       height={64}
       width={64}
@@ -100,6 +109,7 @@ function Figma() {
 function Firebase() {
   return (
     <img
+      className="bubble"
       alt="firebase"
       height={64}
       width={64}
@@ -111,6 +121,7 @@ function Firebase() {
 function Git() {
   return (
     <img
+      className="bubble"
       alt="git"
       height={64}
       width={64}
@@ -122,6 +133,7 @@ function Git() {
 function HTML() {
   return (
     <img
+      className="bubble"
       alt="html"
       height={64}
       width={64}
@@ -133,6 +145,7 @@ function HTML() {
 function Java() {
   return (
     <img
+      className="bubble"
       alt="java"
       height={64}
       width={64}
@@ -144,6 +157,7 @@ function Java() {
 function JavaScript() {
   return (
     <img
+      className="bubble"
       alt="javascript"
       height={64}
       width={64}
@@ -155,6 +169,7 @@ function JavaScript() {
 function Kotlin() {
   return (
     <img
+      className="bubble"
       alt="kotlin"
       height={64}
       width={64}
@@ -166,6 +181,7 @@ function Kotlin() {
 function Linux() {
   return (
     <img
+      className="bubble"
       alt="linux"
       height={64}
       width={64}
@@ -177,6 +193,7 @@ function Linux() {
 function MaterialUI() {
   return (
     <img
+      className="bubble"
       alt="mui"
       height={64}
       width={64}
@@ -188,6 +205,7 @@ function MaterialUI() {
 function Raspberry() {
   return (
     <img
+      className="bubble"
       alt="raspberry"
       height={64}
       width={64}
@@ -196,9 +214,10 @@ function Raspberry() {
   )
 }
 
-function React() {
+function ReactIcon() {
   return (
     <img
+      className="bubble"
       alt="react"
       height={64}
       width={64}
@@ -210,6 +229,7 @@ function React() {
 function TypeScript() {
   return (
     <img
+      className="bubble"
       alt="typescript"
       height={64}
       width={64}
@@ -221,6 +241,7 @@ function TypeScript() {
 function Ubuntu() {
   return (
     <img
+      className="bubble"
       alt="ubuntu"
       height={64}
       width={64}
@@ -232,6 +253,7 @@ function Ubuntu() {
 function Unity() {
   return (
     <img
+      className="bubble"
       alt="unity"
       height={64}
       width={64}
@@ -243,6 +265,7 @@ function Unity() {
 function Windows() {
   return (
     <img
+      className="bubble"
       alt="windows"
       height={64}
       width={64}
@@ -270,7 +293,7 @@ export {
   Linux,
   MaterialUI,
   Raspberry,
-  React,
+  ReactIcon,
   TypeScript,
   Ubuntu,
   Unity,

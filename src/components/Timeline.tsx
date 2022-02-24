@@ -12,6 +12,7 @@ import {
   Typography,
 } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
+import { useState } from 'react'
 
 const CustomConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -80,18 +81,30 @@ function CustomIcon(props: StepIconProps) {
 }
 
 export default function Timeline() {
+  const mql = window.matchMedia('(max-width: 600px)')
+  const [mobile, setMobile] = useState(false)
+
+  mql.addEventListener('change', (e) => {
+    const mobileView = e.matches
+    if (mobileView) {
+      setMobile(true)
+    } else {
+      setMobile(false)
+    }
+  })
+
   return (
     <Stepper
       alternativeLabel
       activeStep={4}
-      orientation="horizontal"
-      connector={<CustomConnector />}
+      orientation={mobile ? 'vertical' : 'horizontal'}
+      connector={mobile ? null : <CustomConnector />}
       sx={{ mt: '32px' }}
     >
-      <Step>
+      <Step sx={{ marginX: 'auto', marginBottom: '16px' }}>
         <StepLabel StepIconComponent={CustomIcon}>
           <Typography textAlign="center" variant="caption" marginX="auto">
-            2015-2016
+            2015
           </Typography>
           <p />
           <Typography
@@ -106,7 +119,7 @@ export default function Timeline() {
           </Typography>
         </StepLabel>
       </Step>
-      <Step>
+      <Step sx={{ marginX: 'auto', marginBottom: '16px' }}>
         <StepLabel StepIconComponent={CustomIcon}>
           <Typography textAlign="center" variant="caption" marginX="auto">
             2018
@@ -123,7 +136,7 @@ export default function Timeline() {
           </Typography>
         </StepLabel>
       </Step>
-      <Step>
+      <Step sx={{ marginX: 'auto', marginBottom: '16px' }}>
         <StepLabel StepIconComponent={CustomIcon}>
           <Typography textAlign="center" variant="caption" marginX="auto">
             2020
@@ -140,7 +153,7 @@ export default function Timeline() {
           </Typography>
         </StepLabel>
       </Step>
-      <Step>
+      <Step sx={{ marginX: 'auto', marginBottom: '16px' }}>
         <StepLabel StepIconComponent={CustomIcon}>
           <Typography textAlign="center" variant="caption" marginX="auto">
             2020

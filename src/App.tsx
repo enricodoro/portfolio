@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react'
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { Container, Fab, Grow, Stack } from '@mui/material'
 import { useRef, useState } from 'react'
 import About from './components/About'
@@ -45,7 +45,7 @@ function App() {
       <Container
         sx={{
           maxWidth: '100% !important',
-          px: '64px !important',
+          px: '32px !important',
           mx: '0 !important',
           backgroundImage: 'url(https://i.imgur.com/Ve40rFI.png)',
           backgroundRepeat: 'no-repeat',
@@ -68,6 +68,7 @@ function App() {
         </Stack>
         <Grow in={scrolled} {...(scrolled ? { timeout: 500 } : {})}>
           <Fab
+            className="custom-fab"
             onClick={handleScroll}
             sx={{
               zIndex: 10,
@@ -76,7 +77,7 @@ function App() {
               bottom: '32px',
             }}
           >
-            <ArrowUpwardIcon />
+            <KeyboardArrowUpIcon />
           </Fab>
         </Grow>
       </Container>

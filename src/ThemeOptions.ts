@@ -8,7 +8,10 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: ['Titillium Web', 'sans-serif'].join(',')
+        fontFamily: ['Titillium Web', 'sans-serif'].join(','),
+        h3:{
+            fontSize: '2.4rem'
+        },
     },
     components:{
         MuiButton:{
@@ -18,6 +21,13 @@ const theme = createTheme({
                     borderRadius: '24px'
                 }
             },
+        },
+        MuiListItemButton:{
+            styleOverrides:{
+                root:{
+                    borderRadius: '16px'
+                }
+            }
         }
     }
 })

@@ -8,7 +8,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: ['Titillium Web', 'sans-serif'].join(','),
+        fontFamily: ['Poppins', 'sans-serif'].join(','),
         h3:{
             fontSize: '2.4rem'
         },

@@ -226,6 +226,18 @@ function ReactIcon() {
   )
 }
 
+function Rust() {
+  return (
+    <img
+      className="bubble"
+      alt="rust"
+      height={64}
+      width={64}
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg"
+    />
+  )
+}
+
 function TypeScript() {
   return (
     <img
@@ -294,6 +306,7 @@ export {
   MaterialUI,
   Raspberry,
   ReactIcon,
+  Rust,
   TypeScript,
   Ubuntu,
   Unity,

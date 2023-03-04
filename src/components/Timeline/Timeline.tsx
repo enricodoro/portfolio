@@ -87,7 +87,6 @@ export default function Timeline(props: any) {
             </StepLabel>
           </Step>
         )}
-
       </Stepper>
     </Box>
   )

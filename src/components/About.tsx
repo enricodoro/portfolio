@@ -1,7 +1,6 @@
 import { Avatar, Paper, Stack, Typography } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
 import Propic from '../images/propic.png'
-import Timeline from './Timeline'
 
 export default function About(props: any) {
   return (
@@ -16,7 +15,6 @@ export default function About(props: any) {
       elevation={8}
       ref={props.aboutRef}
     >
-      <Stack>
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           alignItems="center"
@@ -50,8 +48,6 @@ export default function About(props: any) {
             }}
           />
         </Stack>
-        <Timeline />
-      </Stack>
     </Paper>
   )
 }

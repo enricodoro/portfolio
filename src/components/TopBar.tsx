@@ -24,7 +24,7 @@ import {
   Slide,
   styled,
   Toolbar,
-  useScrollTrigger,
+  useScrollTrigger
 } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
 import { useState } from 'react'
@@ -86,6 +86,12 @@ export default function TopBar(props: any) {
                   onClick={() => props.exScroll(props.aboutRef)}
                 >
                   About Me
+                </Button>
+                <Button
+                  sx={{ my: 2, display: 'block' }}
+                  onClick={() => props.exScroll(props.timelineRef)}
+                >
+                  Timeline
                 </Button>
                 <Button
                   sx={{ my: 2, display: 'block' }}

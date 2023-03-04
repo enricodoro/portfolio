@@ -6,6 +6,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import Knowledges from './components/Knowledges'
 import Projects from './components/Projects'
+import Timeline from './components/Timeline/Timeline'
 import TopBar from './components/TopBar'
 import './css/App.css'
 import theme from './ThemeOptions'
@@ -14,6 +15,7 @@ function App() {
   const aboutRef = useRef(null)
   const projectsRef = useRef(null)
   const knowledgesRef = useRef(null)
+  const timelineRef = useRef(null)
   const [exp, setExp] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -39,6 +41,7 @@ function App() {
       <TopBar
         exScroll={executeScroll}
         aboutRef={aboutRef}
+        timelineRef={timelineRef}
         projectsRef={projectsRef}
         knowledgesRef={knowledgesRef}
       />
@@ -47,10 +50,6 @@ function App() {
           maxWidth: '100% !important',
           px: '32px !important',
           mx: '0 !important',
-          backgroundImage: 'url(https://i.imgur.com/Ve40rFI.png)',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionX: '50%',
-          backgroundSize: 'cover',
         }}
       >
         <Stack
@@ -63,6 +62,7 @@ function App() {
           marginX="auto"
         >
           <About aboutRef={aboutRef} />
+          <Timeline timelineRef={timelineRef}/>
           <Projects projectsRef={projectsRef} />
           <Knowledges knowledgesRef={knowledgesRef} />
         </Stack>

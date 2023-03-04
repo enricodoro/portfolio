@@ -67,10 +67,10 @@ export default function Timeline(props: any) {
         connector={mobile ? null : <CustomConnector />}
         sx={{ mt: '32px', width: 'auto' }}
       >
-        {steps.map(step => 
+        {steps.map(step =>
           <Step sx={{ marginX: 'auto', marginBottom: '16px', cursor: step.link ? "pointer" : "default" }} onClick={() => step.link && window.open(step.link)}>
             <StepLabel StepIconComponent={step.icon}>
-              <Typography textAlign="center" variant="caption" marginX="auto">
+              <Typography textAlign="center" variant="caption" marginX="auto" fontWeight="bold">
                 {step.year}
               </Typography>
               <p />
@@ -87,7 +87,7 @@ export default function Timeline(props: any) {
             </StepLabel>
           </Step>
         )}
-        
+
       </Stepper>
     </Box>
   )

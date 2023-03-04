@@ -1,3 +1,4 @@
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard'
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects'
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople'
@@ -29,7 +30,6 @@ import {
 import { lightBlue } from '@mui/material/colors'
 import { useState } from 'react'
 import Logo from '../images/logo.png'
-
 interface Props {
   window?: () => Window
   children: React.ReactElement
@@ -140,6 +140,7 @@ export default function TopBar(props: any) {
         setOpen={setOpen}
         exScroll={props.exScroll}
         aboutRef={props.aboutRef}
+        timelineRef={props.timelineRef}
         projectsRef={props.projectsRef}
         knowledgesRef={props.knowledgesRef}
       />
@@ -188,6 +189,18 @@ function CustomDrawer(props: any) {
                 <EmojiPeopleIcon />
               </ListItemIcon>
               <ListItemText primary="About me" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem>
+            <ListItemButton
+              onClick={() => {
+                props.exScroll(props.timelineRef)
+              }}
+            >
+              <ListItemIcon>
+                <AccessTimeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Timeline" />
             </ListItemButton>
           </ListItem>
           <ListItem>

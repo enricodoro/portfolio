@@ -1,5 +1,5 @@
-import { Paper, Stack, Typography } from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
+import { Paper, Stack, Typography } from '@mui/material';
+import { lightBlue } from '@mui/material/colors';
 
 export default function Footer() {
   return (
@@ -37,5 +37,5 @@ export default function Footer() {
         <Typography color="white">Made by Enrico D'Oro © 2022</Typography>
       </Stack>
     </Paper>
-  )
+  );
 }

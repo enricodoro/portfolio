@@ -1,5 +1,5 @@
-import { Grid, Paper, Typography } from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
+import { Grid, Paper, Typography } from '@mui/material';
+import { lightBlue } from '@mui/material/colors';
 import {
   Android,
   Apple,
@@ -25,7 +25,7 @@ import {
   Ubuntu,
   Unity,
   Windows,
-} from './Icons'
+} from './Icons';
 
 export default function Knowledges(props: any) {
   return (
@@ -82,5 +82,5 @@ export default function Knowledges(props: any) {
         <Git />
       </Grid>
     </Paper>
-  )
+  );
 }

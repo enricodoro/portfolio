@@ -1,17 +1,16 @@
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard'
-import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects'
-import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople'
-import FacebookIcon from '@mui/icons-material/Facebook'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import MailOutlineIcon from '@mui/icons-material/MailOutline'
-import MenuIcon from '@mui/icons-material/Menu'
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Avatar,
   Box,
-  Button,
   Container,
   Divider,
   Drawer,
@@ -24,47 +23,50 @@ import {
   ListItemText,
   Slide,
   styled,
+  Theme,
   Toolbar,
-  useScrollTrigger
-} from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
-import { useState } from 'react'
-import Logo from '../images/logo.png'
+  useScrollTrigger,
+} from '@mui/material';
+import { useState } from 'react';
+import Logo from '../images/logo.png';
+import Button from './Button/Button';
 interface Props {
-  window?: () => Window
-  children: React.ReactElement
+  window?: () => Window;
+  children: React.ReactElement;
 }
 
 function HideOnScroll(props: Props) {
-  const { children, window } = props
+  const { children, window } = props;
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
-  })
+  });
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
       {children}
     </Slide>
-  )
+  );
 }
 
 export default function TopBar(props: any) {
-  const [open, setOpen] = useState(false)
-  const Offset = styled('div')(({ theme }) => theme.mixins.toolbar)
+  const [open, setOpen] = useState(false);
+  const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
   return (
     <Box>
       <HideOnScroll {...props}>
         <AppBar>
           <Container sx={{ maxWidth: 'lg', p: '0 !important' }}>
-            <Toolbar sx={{}}>
+            <Toolbar>
               <IconButton
                 sx={{
                   display: { xs: 'flex', md: 'none' },
                 }}
                 onClick={() => setOpen(true)}
               >
-                <MenuIcon sx={{ fill: 'white' }} />
+                <MenuIcon
+                  sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                />
               </IconButton>
               <Avatar
                 src={Logo}
@@ -81,53 +83,49 @@ export default function TopBar(props: any) {
                   flexGrow: 1,
                 }}
               >
-                <Button
-                  sx={{ my: 2, display: 'block' }}
-                  onClick={() => props.exScroll(props.aboutRef)}
-                >
+                <Button onClick={() => props.exScroll(props.aboutRef)}>
                   About Me
                 </Button>
-                <Button
-                  sx={{ my: 2, display: 'block' }}
-                  onClick={() => props.exScroll(props.timelineRef)}
-                >
+                <Button onClick={() => props.exScroll(props.timelineRef)}>
                   Timeline
                 </Button>
-                <Button
-                  sx={{ my: 2, display: 'block' }}
-                  onClick={() => props.exScroll(props.projectsRef)}
-                >
+                <Button onClick={() => props.exScroll(props.projectsRef)}>
                   Projects
                 </Button>
-                <Button
-                  sx={{ my: 2, display: 'block' }}
-                  onClick={() => props.exScroll(props.knowledgesRef)}
-                >
+                <Button onClick={() => props.exScroll(props.knowledgesRef)}>
                   Knowledges
                 </Button>
               </Box>
               <Box sx={{ flexGrow: 1 }} />
               <Box>
                 <IconButton href="mailto:er.enricodoro@gmail.com">
-                  <MailOutlineIcon sx={{ fill: 'white' }} />
+                  <MailOutlineIcon
+                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                  />
                 </IconButton>
                 <IconButton
                   href="https://www.facebook.com/ggoldenharry/"
                   target="_blank"
                 >
-                  <FacebookIcon sx={{ fill: 'white' }} />
+                  <FacebookIcon
+                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                  />
                 </IconButton>
                 <IconButton
                   href="https://github.com/enricodoro"
                   target="_blank"
                 >
-                  <GitHubIcon sx={{ fill: 'white' }} />
+                  <GitHubIcon
+                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                  />
                 </IconButton>
                 <IconButton
                   href="https://www.linkedin.com/in/enrico-d-oro-482b64230/"
                   target="_blank"
                 >
-                  <LinkedInIcon sx={{ fill: 'white' }} />
+                  <LinkedInIcon
+                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                  />
                 </IconButton>
               </Box>
             </Toolbar>
@@ -145,7 +143,7 @@ export default function TopBar(props: any) {
         knowledgesRef={props.knowledgesRef}
       />
     </Box>
-  )
+  );
 }
 
 function CustomDrawer(props: any) {
@@ -157,8 +155,10 @@ function CustomDrawer(props: any) {
     >
       <Box
         width={250}
+        height={'100%'}
         role="presentation"
         onKeyDown={() => props.setOpen(false)}
+        sx={{ backgroundColor: (t) => t.palette.primary.main }}
       >
         <List>
           <ListItem>
@@ -166,14 +166,17 @@ function CustomDrawer(props: any) {
               children={
                 <Avatar
                   src={Logo}
-                  sx={{ backgroundColor: lightBlue[900], p: '4px' }}
+                  sx={{
+                    backgroundColor: (t) => t.palette.secondary.main,
+                    p: '4px',
+                  }}
                 />
               }
             />
             <ListItemText
               primary="ENRICO D'ORO"
               secondary="Portfolio"
-              sx={{ color: lightBlue[900] }}
+              sx={{ color: (t) => t.palette.secondary.main }}
             />
           </ListItem>
         </List>
@@ -182,11 +185,11 @@ function CustomDrawer(props: any) {
           <ListItem>
             <ListItemButton
               onClick={() => {
-                props.exScroll(props.aboutRef)
+                props.exScroll(props.aboutRef);
               }}
             >
               <ListItemIcon>
-                <EmojiPeopleIcon />
+                <EmojiPeopleIcon color="secondary" />
               </ListItemIcon>
               <ListItemText primary="About me" />
             </ListItemButton>
@@ -194,7 +197,7 @@ function CustomDrawer(props: any) {
           <ListItem>
             <ListItemButton
               onClick={() => {
-                props.exScroll(props.timelineRef)
+                props.exScroll(props.timelineRef);
               }}
             >
               <ListItemIcon>
@@ -206,7 +209,7 @@ function CustomDrawer(props: any) {
           <ListItem>
             <ListItemButton
               onClick={() => {
-                props.exScroll(props.projectsRef)
+                props.exScroll(props.projectsRef);
               }}
             >
               <ListItemIcon>
@@ -226,5 +229,5 @@ function CustomDrawer(props: any) {
         </List>
       </Box>
     </Drawer>
-  )
+  );
 }

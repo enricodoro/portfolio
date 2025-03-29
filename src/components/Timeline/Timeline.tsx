@@ -1,14 +1,16 @@
 import {
-  Box, Step,
+  Box,
+  Step,
   StepConnector,
-  stepConnectorClasses, StepLabel,
+  stepConnectorClasses,
+  StepLabel,
   Stepper,
   styled,
-  Typography
-} from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
-import { useState } from 'react'
-import { steps } from './Steps'
+  Typography,
+} from '@mui/material';
+import { lightBlue } from '@mui/material/colors';
+import { useState } from 'react';
+import { steps } from './Steps';
 
 const CustomConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -33,20 +35,20 @@ const CustomConnector = styled(StepConnector)(({ theme }) => ({
       theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
     borderRadius: 16,
   },
-}))
+}));
 
 export default function Timeline(props: any) {
-  const mql = window.matchMedia('(max-width: 600px)')
-  const [mobile, setMobile] = useState(false)
+  const mql = window.matchMedia('(max-width: 600px)');
+  const [mobile, setMobile] = useState(false);
 
   mql.addEventListener('change', (e) => {
-    const mobileView = e.matches
+    const mobileView = e.matches;
     if (mobileView) {
-      setMobile(true)
+      setMobile(true);
     } else {
-      setMobile(false)
+      setMobile(false);
     }
-  })
+  });
 
   return (
     <Box
@@ -56,7 +58,7 @@ export default function Timeline(props: any) {
         borderRadius: '16px',
         maxWidth: '100%',
         mx: 'auto',
-        overflow: 'auto'
+        overflow: 'auto',
       }}
       ref={props.timelineRef}
     >
@@ -67,10 +69,22 @@ export default function Timeline(props: any) {
         connector={mobile ? null : <CustomConnector />}
         sx={{ mt: '32px', width: 'auto' }}
       >
-        {steps.map(step =>
-          <Step sx={{ marginX: 'auto', marginBottom: '16px', cursor: step.link ? "pointer" : "default" }} onClick={() => step.link && window.open(step.link)}>
+        {steps.map((step) => (
+          <Step
+            sx={{
+              marginX: 'auto',
+              marginBottom: '16px',
+              cursor: step.link ? 'pointer' : 'default',
+            }}
+            onClick={() => step.link && window.open(step.link)}
+          >
             <StepLabel StepIconComponent={step.icon}>
-              <Typography textAlign="center" variant="caption" marginX="auto" fontWeight="bold">
+              <Typography
+                textAlign="center"
+                variant="caption"
+                marginX="auto"
+                fontWeight="bold"
+              >
                 {step.year}
               </Typography>
               <p />
@@ -80,14 +94,14 @@ export default function Timeline(props: any) {
                 marginX="auto"
                 fontWeight="bold"
                 color={lightBlue[900]}
-                fontSize='12px'
+                fontSize="12px"
               >
                 {step.title}
               </Typography>
             </StepLabel>
           </Step>
-        )}
+        ))}
       </Stepper>
     </Box>
-  )
+  );
 }

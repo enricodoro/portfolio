@@ -1,7 +1,6 @@
-import { OptionGroupUnstyled, OptionGroupUnstyledProps } from '@mui/base'
-import DownloadIcon from '@mui/icons-material/Download'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import VisibilityIcon from '@mui/icons-material/Visibility'
+import DownloadIcon from '@mui/icons-material/Download';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import {
   Box,
   Button,
@@ -17,17 +16,16 @@ import {
   Paper,
   Select,
   Stack,
-  styled,
   Typography,
-} from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
-import * as React from 'react'
-import { useState } from 'react'
-import BasilPreview from '../images/basil_preview.png'
-import Seica from '../images/seica-productronics.png'
-import StopAndGo from '../images/stop_and_go_preview.png'
-import SurfeysPreview from '../images/surfeys_preview.png'
-import WASDPreview from '../images/wasd_preview.png'
+} from '@mui/material';
+import * as React from 'react';
+import { lightBlue } from '@mui/material/colors';
+import { useState } from 'react';
+import BasilPreview from '../images/basil_preview.png';
+import Seica from '../images/seica-productronics.png';
+import StopAndGo from '../images/stop_and_go_preview.png';
+import SurfeysPreview from '../images/surfeys_preview.png';
+import WASDPreview from '../images/wasd_preview.png';
 import {
   Android,
   Bootstrap,
@@ -40,24 +38,24 @@ import {
   ReactIcon,
   TypeScript,
   Unity,
-} from './Icons'
-let SeicaReport = require('../downloads/report.pdf')
-let GameDesignPitch = require('../downloads/cicles_pitch.pdf')
+} from './Icons';
+let SeicaReport = require('../downloads/report.pdf');
+let GameDesignPitch = require('../downloads/cicles_pitch.pdf');
 
-const mql = window.matchMedia('(max-width: 600px)')
+const mql = window.matchMedia('(max-width: 600px)');
 
 export default function Projects(props: any) {
-  const [selectedItem, setSelectedItem] = useState<number | null>(0)
-  const [mobile, setMobile] = useState(false)
+  const [selectedItem, setSelectedItem] = useState<number | null>(0);
+  const [mobile, setMobile] = useState(false);
 
   mql.addEventListener('change', (e) => {
-    const mobileView = e.matches
+    const mobileView = e.matches;
     if (mobileView) {
-      setMobile(true)
+      setMobile(true);
     } else {
-      setMobile(false)
+      setMobile(false);
     }
-  })
+  });
 
   let projects = [
     'Game Design',
@@ -65,37 +63,7 @@ export default function Projects(props: any) {
     'Web Application',
     'Software Engineering',
     'Human Computer Interaction',
-  ]
-
-  const StyledGroupRoot = styled('li')`
-    list-style: none;
-  `
-
-  const StyledGroupHeader = styled('span')``
-
-  const StyledGroupOptions = styled('ul')`
-    list-style: none;
-    margin-left: 0;
-    padding: 0;
-
-    > li {
-      padding-left: 20px;
-    }
-  `
-
-  const CustomOptionGroup = React.forwardRef(function CustomOptionGroup(
-    props: OptionGroupUnstyledProps,
-    ref: React.ForwardedRef<any>,
-  ) {
-    const components: OptionGroupUnstyledProps['components'] = {
-      Root: StyledGroupRoot,
-      Label: StyledGroupHeader,
-      List: StyledGroupOptions,
-      ...props.components,
-    }
-
-    return <OptionGroupUnstyled {...props} ref={ref} components={components} />
-  })
+  ];
 
   return (
     <Paper
@@ -203,7 +171,7 @@ export default function Projects(props: any) {
         </Grid>
       </Grid>
     </Paper>
-  )
+  );
 }
 
 // PROJECTS INFO
@@ -238,7 +206,7 @@ function SeicaProject(props: any) {
         </Button>
       </Stack>
     </Box>
-  )
+  );
 }
 
 function GameDesignProject(props: any) {
@@ -296,11 +264,11 @@ function GameDesignProject(props: any) {
         </Stack>
       </Stack>
     </Box>
-  )
+  );
 }
 
 function MobileProject(props: any) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <Box>
@@ -355,11 +323,11 @@ function MobileProject(props: any) {
       </Stack>
       <MADPreview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
-  )
+  );
 }
 
 function WebProject(props: any) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <Box>
@@ -406,11 +374,11 @@ function WebProject(props: any) {
       </Stack>
       <WA1Preview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
-  )
+  );
 }
 
 function SoftEngProject(props: any) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <Box>
@@ -472,11 +440,11 @@ function SoftEngProject(props: any) {
       </Stack>
       <SE2Preview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
-  )
+  );
 }
 
 function HCIProject(props: any) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <Box>
@@ -511,7 +479,7 @@ function HCIProject(props: any) {
       </Stack>
       <HCIPreview open={open} setOpen={setOpen} mobile={props.mobile} />
     </Box>
-  )
+  );
 }
 
 // PREVIEWS
@@ -534,7 +502,7 @@ function HCIPreview(props: any) {
         </Stack>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 
 function SE2Preview(props: any) {
@@ -555,7 +523,7 @@ function SE2Preview(props: any) {
         </Stack>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 
 function MADPreview(props: any) {
@@ -576,7 +544,7 @@ function MADPreview(props: any) {
         </Stack>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 
 function WA1Preview(props: any) {
@@ -597,5 +565,5 @@ function WA1Preview(props: any) {
         </Stack>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

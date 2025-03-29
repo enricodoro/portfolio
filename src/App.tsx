@@ -1,40 +1,38 @@
-import { ThemeProvider } from '@emotion/react'
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { Container, Fab, Grow, Stack } from '@mui/material'
-import { useRef, useState } from 'react'
-import About from './components/About'
-import Footer from './components/Footer'
-import Knowledges from './components/Knowledges'
-import Projects from './components/Projects'
-import Timeline from './components/Timeline/Timeline'
-import TopBar from './components/TopBar'
-import './css/App.css'
-import theme from './ThemeOptions'
+import { ThemeProvider } from '@emotion/react';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Container, Fab, Grow, Stack } from '@mui/material';
+import { useRef, useState } from 'react';
+import About from './components/About';
+import Footer from './components/Footer';
+import Knowledges from './components/Knowledges';
+import Projects from './components/Projects';
+import Timeline from './components/Timeline/Timeline';
+import TopBar from './components/TopBar';
+import './css/App.css';
+import theme from './ThemeOptions';
 
 function App() {
-  const aboutRef = useRef(null)
-  const projectsRef = useRef(null)
-  const knowledgesRef = useRef(null)
-  const timelineRef = useRef(null)
-  const [exp, setExp] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const knowledgesRef = useRef(null);
+  const timelineRef = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
 
   window.addEventListener('scroll', function () {
     if (window.scrollY === 0) {
-      setScrolled(false)
+      setScrolled(false);
     } else {
-      setScrolled(true)
+      setScrolled(true);
     }
-  })
+  });
 
   const executeScroll = (myRef: any) => {
-    myRef.current.scrollIntoView()
-    setExp(false)
-  }
+    myRef.current.scrollIntoView();
+  };
 
   const handleScroll = () => {
-    window.scrollTo(0, 0)
-  }
+    window.scrollTo(0, 0);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,7 +60,7 @@ function App() {
           marginX="auto"
         >
           <About aboutRef={aboutRef} />
-          <Timeline timelineRef={timelineRef}/>
+          <Timeline timelineRef={timelineRef} />
           <Projects projectsRef={projectsRef} />
           <Knowledges knowledgesRef={knowledgesRef} />
         </Stack>
@@ -83,7 +81,7 @@ function App() {
       </Container>
       <Footer />
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;

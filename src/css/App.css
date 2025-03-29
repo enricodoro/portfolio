@@ -1,39 +1,40 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-.bubble, .bubble-solid {
-    transition: transform .2s;
+.bubble,
+.bubble-solid {
+  transition: transform 0.2s;
 }
 
 .bubble-solid:hover {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .bubble:hover {
-    opacity: 0.9;
-    transform: scale(1.5);
+  opacity: 0.9;
+  transform: scale(1.5);
 }
 
 .bold-text {
-    color: #01579b;
+  color: #01579b;
 }
 
 .custom-fab {
-    background-color: #fafafa !important;
-    color: #01579b !important;
+  background-color: #fafafa !important;
+  color: #01579b !important;
 }
 
 .custom-fab:hover {
-    opacity: 0.9 !important;
+  opacity: 0.9 !important;
 }
 
 .group-header {
-    display: block;
-    padding: 15px 0 5px 10px;
-    font-size: 0.75em;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    color: #6F7E8C;
+  display: block;
+  padding: 15px 0 5px 10px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: #6f7e8c;
 }

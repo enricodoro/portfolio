@@ -7,7 +7,7 @@ function Android() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
     />
-  )
+  );
 }
 
 function Apple() {
@@ -19,7 +19,7 @@ function Apple() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
     />
-  )
+  );
 }
 
 function Arduino() {
@@ -31,7 +31,7 @@ function Arduino() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
     />
-  )
+  );
 }
 
 function Bootstrap() {
@@ -43,7 +43,7 @@ function Bootstrap() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg"
     />
-  )
+  );
 }
 
 function C() {
@@ -55,7 +55,7 @@ function C() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
     />
-  )
+  );
 }
 
 function CSharp() {
@@ -67,7 +67,7 @@ function CSharp() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
     />
-  )
+  );
 }
 
 function CSS() {
@@ -79,7 +79,7 @@ function CSS() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
     />
-  )
+  );
 }
 
 function Docker() {
@@ -91,7 +91,7 @@ function Docker() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg"
     />
-  )
+  );
 }
 
 function Figma() {
@@ -103,7 +103,7 @@ function Figma() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
     />
-  )
+  );
 }
 
 function Firebase() {
@@ -115,7 +115,7 @@ function Firebase() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
     />
-  )
+  );
 }
 
 function Git() {
@@ -127,7 +127,7 @@ function Git() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
     />
-  )
+  );
 }
 
 function HTML() {
@@ -139,7 +139,7 @@ function HTML() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
     />
-  )
+  );
 }
 
 function Java() {
@@ -151,7 +151,7 @@ function Java() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
     />
-  )
+  );
 }
 
 function JavaScript() {
@@ -163,7 +163,7 @@ function JavaScript() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
     />
-  )
+  );
 }
 
 function Kotlin() {
@@ -175,7 +175,7 @@ function Kotlin() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
     />
-  )
+  );
 }
 
 function Linux() {
@@ -187,7 +187,7 @@ function Linux() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
     />
-  )
+  );
 }
 
 function MaterialUI() {
@@ -199,7 +199,7 @@ function MaterialUI() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
     />
-  )
+  );
 }
 
 function Raspberry() {
@@ -211,7 +211,7 @@ function Raspberry() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
     />
-  )
+  );
 }
 
 function ReactIcon() {
@@ -223,7 +223,7 @@ function ReactIcon() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
     />
-  )
+  );
 }
 
 function Rust() {
@@ -235,7 +235,7 @@ function Rust() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg"
     />
-  )
+  );
 }
 
 function TypeScript() {
@@ -247,7 +247,7 @@ function TypeScript() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
     />
-  )
+  );
 }
 
 function Ubuntu() {
@@ -259,7 +259,7 @@ function Ubuntu() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg"
     />
-  )
+  );
 }
 
 function Unity() {
@@ -271,7 +271,7 @@ function Unity() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"
     />
-  )
+  );
 }
 
 function Windows() {
@@ -283,7 +283,7 @@ function Windows() {
       width={64}
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"
     />
-  )
+  );
 }
 
 export {
@@ -311,4 +311,4 @@ export {
   Ubuntu,
   Unity,
   Windows,
-}
+};

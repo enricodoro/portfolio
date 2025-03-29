@@ -18,9 +18,10 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import * as React from 'react';
 import { lightBlue } from '@mui/material/colors';
 import { useState } from 'react';
+import GameDesignPitch from '../downloads/cicles_pitch.pdf';
+import SeicaReport from '../downloads/report.pdf';
 import BasilPreview from '../images/basil_preview.png';
 import Seica from '../images/seica-productronics.png';
 import StopAndGo from '../images/stop_and_go_preview.png';
@@ -39,8 +40,6 @@ import {
   TypeScript,
   Unity,
 } from './Icons';
-let SeicaReport = require('../downloads/report.pdf');
-let GameDesignPitch = require('../downloads/cicles_pitch.pdf');
 
 const mql = window.matchMedia('(max-width: 600px)');
 
@@ -57,7 +56,7 @@ export default function Projects(props: any) {
     }
   });
 
-  let projects = [
+  const projects = [
     'Game Design',
     'Mobile Application',
     'Web Application',
@@ -225,10 +224,10 @@ function GameDesignProject(props: any) {
           <b className="bold-text">creation of a videogame from scratch</b>,
           including every aspect of it: we produced a trailer, a playable
           prototype and a pitch document as if we were to present it to a
-          publisher to have it funded. We named it "Cicles" and each one of us
-          had his specific role in the group: personally I programmed most of
-          the prototype using <b className="bold-text">Unity</b> and I was also
-          in charge of managing the sound effects.
+          publisher to have it funded. We named it &quot;Cicles&quot; and each
+          one of us had his specific role in the group: personally I programmed
+          most of the prototype using <b className="bold-text">Unity</b> and I
+          was also in charge of managing the sound effects.
         </Typography>
         <iframe
           height={props.mobile ? '135' : '270'}

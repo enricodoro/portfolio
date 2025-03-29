@@ -34,7 +34,7 @@ export default function Footer() {
             style={{ color: 'white', fontSize: 32 }}
           />
         </Stack>
-        <Typography color="white">Made by Enrico D'Oro © 2022</Typography>
+        <Typography color="white">Made by Enrico D&apos;Oro © 2022</Typography>
       </Stack>
     </Paper>
   );

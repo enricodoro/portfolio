@@ -1,13 +1,11 @@
-import { ButtonProps } from '@mui/material';
-
-export default function Button(props: ButtonProps) {
+import { Button, ButtonProps } from '@mui/material';
+function CustomButton(props: ButtonProps) {
   const { children } = props;
   return (
-    <Button
-      sx={{ my: 2, display: 'block', color: (t) => t.palette.secondary.main }}
-      {...props}
-    >
+    <Button sx={{ my: 2, display: 'block' }} {...props}>
       {children}
     </Button>
   );
 }
+
+export { CustomButton as Button };

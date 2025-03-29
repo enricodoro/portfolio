@@ -31,9 +31,10 @@ export default function About(props: any) {
             About me
           </Typography>
           <Typography textAlign="justify">
-            I'm Enrico D'Oro, born in Ivrea (Italy) in 1996, graduated in
-            Computer Engineering from the Polytechnic of Turin and currently
-            enrolled in the Software Master Degree Course. I like developing{' '}
+            I&apos;m Enrico D&apos;Oro, born in Ivrea (Italy) in 1996, graduated
+            in Computer Engineering (Bachelor Degree) and in Software
+            Engineering (Master Degree), both at the Polytechnic of Turin. I
+            like developing{' '}
             <b className="bold-text">web and mobile applications</b> and working
             on <b className="bold-text">interfaces design</b>, in order to
             produce a useful and easy to use product. I am interested in

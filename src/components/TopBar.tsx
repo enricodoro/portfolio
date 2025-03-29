@@ -23,13 +23,12 @@ import {
   ListItemText,
   Slide,
   styled,
-  Theme,
   Toolbar,
   useScrollTrigger,
 } from '@mui/material';
 import { useState } from 'react';
 import Logo from '../images/logo.png';
-import Button from './Button/Button';
+import { Button } from './Button/Button';
 interface Props {
   window?: () => Window;
   children: React.ReactElement;
@@ -65,7 +64,7 @@ export default function TopBar(props: any) {
                 onClick={() => setOpen(true)}
               >
                 <MenuIcon
-                  sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                  sx={{ fill: (t) => t.palette.primary.contrastText }}
                 />
               </IconButton>
               <Avatar
@@ -100,7 +99,7 @@ export default function TopBar(props: any) {
               <Box>
                 <IconButton href="mailto:er.enricodoro@gmail.com">
                   <MailOutlineIcon
-                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                    sx={{ fill: (t) => t.palette.primary.contrastText }}
                   />
                 </IconButton>
                 <IconButton
@@ -108,7 +107,7 @@ export default function TopBar(props: any) {
                   target="_blank"
                 >
                   <FacebookIcon
-                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                    sx={{ fill: (t) => t.palette.primary.contrastText }}
                   />
                 </IconButton>
                 <IconButton
@@ -116,7 +115,7 @@ export default function TopBar(props: any) {
                   target="_blank"
                 >
                   <GitHubIcon
-                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                    sx={{ fill: (t) => t.palette.primary.contrastText }}
                   />
                 </IconButton>
                 <IconButton
@@ -124,7 +123,7 @@ export default function TopBar(props: any) {
                   target="_blank"
                 >
                   <LinkedInIcon
-                    sx={{ fill: (t: Theme) => t.palette.secondary.main }}
+                    sx={{ fill: (t) => t.palette.primary.contrastText }}
                   />
                 </IconButton>
               </Box>
@@ -158,25 +157,22 @@ function CustomDrawer(props: any) {
         height={'100%'}
         role="presentation"
         onKeyDown={() => props.setOpen(false)}
-        sx={{ backgroundColor: (t) => t.palette.primary.main }}
       >
         <List>
           <ListItem>
-            <ListItemAvatar
-              children={
-                <Avatar
-                  src={Logo}
-                  sx={{
-                    backgroundColor: (t) => t.palette.secondary.main,
-                    p: '4px',
-                  }}
-                />
-              }
-            />
+            <ListItemAvatar>
+              <Avatar
+                src={Logo}
+                sx={{
+                  p: '4px',
+                  backgroundColor: (t) => t.palette.primary.main,
+                }}
+              />
+            </ListItemAvatar>
             <ListItemText
               primary="ENRICO D'ORO"
               secondary="Portfolio"
-              sx={{ color: (t) => t.palette.secondary.main }}
+              sx={{ color: (t) => t.palette.primary.main }}
             />
           </ListItem>
         </List>
@@ -189,7 +185,7 @@ function CustomDrawer(props: any) {
               }}
             >
               <ListItemIcon>
-                <EmojiPeopleIcon color="secondary" />
+                <EmojiPeopleIcon />
               </ListItemIcon>
               <ListItemText primary="About me" />
             </ListItemButton>

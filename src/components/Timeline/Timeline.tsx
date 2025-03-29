@@ -71,6 +71,7 @@ export default function Timeline(props: any) {
       >
         {steps.map((step) => (
           <Step
+            key={step.title}
             sx={{
               marginX: 'auto',
               marginBottom: '16px',

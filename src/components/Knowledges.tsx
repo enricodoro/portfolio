@@ -20,7 +20,6 @@ import {
   MaterialUI,
   Raspberry,
   ReactIcon,
-  Rust,
   TypeScript,
   Ubuntu,
   Unity,
@@ -72,7 +71,7 @@ export default function Knowledges(props: any) {
         <TypeScript />
         <Java />
         <Kotlin />
-        <Rust />
+        {/* <Rust /> */}
         <C />
         <CSharp />
         <Unity />

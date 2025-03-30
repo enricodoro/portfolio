@@ -1,10 +1,12 @@
-import { lightBlue } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: lightBlue[900],
+      main: "#202216",
+    },
+    secondary: {
+      main: "#F2DE9B",
     },
   },
   typography: {
